@@ -160,8 +160,8 @@ class Gomoku
   def initialize()
     @board = Hash.new
     @move_stack = Array.new
-    for i in 1..@max
     @max = 7
+    for i in 1..@max
       for j in 1..@max
         @board[[i,j]] = [0,Blocked.new]
       end
