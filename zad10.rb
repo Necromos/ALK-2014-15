@@ -128,11 +128,8 @@ class Gomoku
           if !win && @move_stack.length == @max**2
             return_moves()
           else
-            #puts "lol"
-            #puts win
             return if win
           end
-          #puts "sup"
         end
       end
     end
