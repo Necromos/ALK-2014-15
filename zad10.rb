@@ -27,7 +27,7 @@ class Gomoku
         return false
       end
     end
-    (!@board[[x+5, y]].nil? && @board[[x+5,y]][0] == sign) ? false : true
+    (!@board[[x+5, y]].nil? && @board[[x+5,y]][0] == sign) || ((!@board[[x-1, y]].nil? && @board[[x-1,y]][0] == sign)) ? false : true
   end
 
   def check_top(x, y)
@@ -37,7 +37,7 @@ class Gomoku
         return false
       end
     end
-    (!@board[[x, y+5]].nil? && @board[[x,y+5]][0] == sign) ? false : true
+    (!@board[[x, y+5]].nil? && @board[[x,y+5]][0] == sign) || (!@board[[x, y-1]].nil? && @board[[x,y-1]][0] == sign) ? false : true
   end
 
   def check_cross_right(x, y)
@@ -47,7 +47,7 @@ class Gomoku
         return false
       end
     end
-    (!@board[[x+5, y+5]].nil? && @board[[x+5,y+5]][0] == sign) ? false : true
+    (!@board[[x+5, y+5]].nil? && @board[[x+5,y+5]][0] == sign) || (!@board[[x-1, y-1]].nil? && @board[[x-1,y-1]][0] == sign) ? false : true
   end
 
   def check_cross_left(x, y)
@@ -57,7 +57,7 @@ class Gomoku
         return false
       end
     end
-    (!@board[[x-5, y+5]].nil? && @board[[x-5,y+5]][0] == sign) ? false : true
+    (!@board[[x-5, y+5]].nil? && @board[[x-5,y+5]][0] == sign) || (!@board[[x+1, y-1]].nil? && @board[[x+1,y-1]][0] == sign) ? false : true
   end
 
   def print_end()
